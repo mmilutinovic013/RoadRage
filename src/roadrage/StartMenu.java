@@ -1,227 +1,210 @@
-//steven burns 11/4/2015
-// actionlistener for begin game needs to be coded on line 200
+// steven Burns 11/5/2015
+// this is the start menu  that will have high scores, difficulty, vehicle selection,name entry, and instructions
+// things to do call game panel and set high scores(173,179)
 package roadrage;
 
-public class StartMenu extends javax.swing.JPanel {
+public class StartMenu extends javax.swing.JFrame {
 
     public StartMenu() {
         initComponents();
     }
 
-
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jInternalFrame1 = new javax.swing.JInternalFrame();
-        buttonGroupvehicle = new javax.swing.ButtonGroup();
-        buttonGroupdifficulty = new javax.swing.ButtonGroup();
+        Difficulty = new javax.swing.ButtonGroup();
+        Motocycle = new javax.swing.JButton();
+        Car = new javax.swing.JButton();
+        Truck = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        ButtonEasy = new javax.swing.JRadioButton();
-        ButtonMedium = new javax.swing.JRadioButton();
-        ButtonHard = new javax.swing.JRadioButton();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        EasyButton = new javax.swing.JRadioButton();
+        MediumButton = new javax.swing.JRadioButton();
+        HardButton = new javax.swing.JRadioButton();
+        StartGame = new javax.swing.JButton();
+        RoadRage = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        ButtonTruck = new javax.swing.JRadioButton();
-        ButtonMotocycle = new javax.swing.JRadioButton();
-        ButtonCar = new javax.swing.JRadioButton();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        HighScoreList = new javax.swing.JLabel();
-        StartButton = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        UsersName = new javax.swing.JTextField();
+        NameEntry = new javax.swing.JTextField();
+        lblHighScores = new javax.swing.JLabel();
+        Instructions1 = new javax.swing.JLabel();
+        Instructions2 = new javax.swing.JLabel();
+        HighScore = new javax.swing.JLabel();
 
-        jInternalFrame1.setVisible(true);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
-        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
-        jInternalFrame1Layout.setHorizontalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jInternalFrame1Layout.setVerticalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
+        Motocycle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/roadrage/Pictures/motorcycle.png"))); // NOI18N
 
-        jLabel1.setText("Welcome to Road Rage!");
+        Car.setIcon(new javax.swing.ImageIcon(getClass().getResource("/roadrage/Pictures/subaru.png"))); // NOI18N
 
-        buttonGroupdifficulty.add(ButtonEasy);
-        ButtonEasy.setText("Easy");
-        ButtonEasy.addActionListener(new java.awt.event.ActionListener() {
+        Truck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/roadrage/Pictures/truck icon.png"))); // NOI18N
+
+        jLabel1.setText("Choose your vehicle!");
+
+        jLabel2.setText("Choose your difficulty");
+
+        Difficulty.add(EasyButton);
+        EasyButton.setText("Easy");
+
+        Difficulty.add(MediumButton);
+        MediumButton.setText("Medium");
+
+        Difficulty.add(HardButton);
+        HardButton.setText("Hard");
+
+        StartGame.setText("Start Game");
+        StartGame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonEasyActionPerformed(evt);
+                StartGameActionPerformed(evt);
             }
         });
 
-        buttonGroupdifficulty.add(ButtonMedium);
-        ButtonMedium.setText("medium");
+        RoadRage.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        RoadRage.setText("Road Rage!");
 
-        buttonGroupdifficulty.add(ButtonHard);
-        ButtonHard.setText("hard");
+        jLabel4.setText("Please Enter Your Name");
 
-        jLabel2.setText("Please select the difficulty.\n");
-        jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lblHighScores.setText("High Scores");
 
-        jLabel3.setText("Difficulty changes the speed obstacles fall.");
+        Instructions1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Instructions1.setText("Road Rage is a gmae where you test your reaction \n");
+        Instructions1.setToolTipText("");
+        Instructions1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        jLabel4.setText("Please select your vehicle.");
+        Instructions2.setText("speed by evading obstacles at break neck speeds.");
 
-        buttonGroupvehicle.add(ButtonTruck);
-        ButtonTruck.setText("truck");
+        HighScore.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                HighScoreInputMethodTextChanged(evt);
+            }
+        });
 
-        buttonGroupvehicle.add(ButtonMotocycle);
-        ButtonMotocycle.setText("motocycle");
-
-        buttonGroupvehicle.add(ButtonCar);
-        ButtonCar.setText("car");
-
-        jLabel5.setText("In Road Rage you will avoid object at break neck speeds.");
-
-        jLabel7.setText("Different vehicles have different durabilities and levels of speed.");
-
-        jLabel6.setText("High score list");
-
-        HighScoreList.setText("highscore needs to be populated ");
-        HighScoreList.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
-        StartButton.setText("Start Button");
-
-        jLabel9.setText("Start your engines!!!");
-
-        jLabel10.setText("As you drive you will have to avoid falling objects using the arrow keys.");
-
-        jLabel11.setText("Please enter your name.");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(288, 288, 288)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(202, 202, 202)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ButtonMotocycle)
-                            .addComponent(jLabel11)
-                            .addComponent(ButtonTruck)
-                            .addComponent(ButtonCar))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ButtonHard)
-                            .addComponent(ButtonMedium)
-                            .addComponent(ButtonEasy))
-                        .addGap(42, 42, 42))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(UsersName, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(RoadRage, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Instructions1)
+                                    .addComponent(Instructions2))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 229, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel3)
-                                    .addComponent(HighScoreList)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(35, 35, 35)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(StartButton)
-                                            .addComponent(jLabel9))))))
-                        .addGap(10, 10, 10))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(EasyButton)
+                                        .addComponent(MediumButton))
+                                    .addComponent(HardButton)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(NameEntry))
+                                .addGap(84, 84, 84))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblHighScores)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Truck, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Car, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Motocycle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(47, 47, 47))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(HighScore, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(StartGame)
+                        .addGap(134, 134, 134))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel10)
-                .addGap(51, 51, 51)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ButtonEasy)
-                    .addComponent(ButtonMotocycle))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ButtonTruck)
-                    .addComponent(ButtonMedium))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ButtonHard)
-                    .addComponent(ButtonCar))
-                .addGap(136, 136, 136)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel11))
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(HighScoreList, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(UsersName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
-                .addComponent(jLabel9)
-                .addGap(27, 27, 27)
-                .addComponent(StartButton)
-                .addGap(62, 62, 62))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel2))
+                        .addGap(18, 18, 18)
+                        .addComponent(Motocycle, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Car))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(47, 47, 47)
+                                .addComponent(jLabel4)
+                                .addGap(19, 19, 19)
+                                .addComponent(NameEntry, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(RoadRage, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(EasyButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(MediumButton)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(HardButton)
+                            .addComponent(Instructions1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Instructions2)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(lblHighScores)
+                        .addGap(18, 18, 18)
+                        .addComponent(HighScore, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Truck)
+                        .addGap(82, 82, 82)
+                        .addComponent(StartGame)))
+                .addGap(35, 35, 35))
         );
-    }// </editor-fold>                        
 
-    private void ButtonEasyActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // this needs to call the gamepanel
-    }                                          
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
 
+    private void StartGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartGameActionPerformed
 
-    // Variables declaration - do not modify                     
-    private javax.swing.JRadioButton ButtonCar;
-    private javax.swing.JRadioButton ButtonEasy;
-    private javax.swing.JRadioButton ButtonHard;
-    private javax.swing.JRadioButton ButtonMedium;
-    private javax.swing.JRadioButton ButtonMotocycle;
-    private javax.swing.JRadioButton ButtonTruck;
-    private javax.swing.JLabel HighScoreList;
-    private javax.swing.JButton StartButton;
-    private javax.swing.JTextField UsersName;
-    private javax.swing.ButtonGroup buttonGroupdifficulty;
-    private javax.swing.ButtonGroup buttonGroupvehicle;
-    private javax.swing.JInternalFrame jInternalFrame1;
+        // this needs to call the game panel
+    }//GEN-LAST:event_StartGameActionPerformed
+
+    private void HighScoreInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_HighScoreInputMethodTextChanged
+        // set this to the high scores
+    }//GEN-LAST:event_HighScoreInputMethodTextChanged
+
+    public static void main(String args[]) {
+
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new StartMenu().setVisible(true);
+            }
+        });
+    }
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Car;
+    private javax.swing.ButtonGroup Difficulty;
+    private javax.swing.JRadioButton EasyButton;
+    private javax.swing.JRadioButton HardButton;
+    private javax.swing.JLabel HighScore;
+    private javax.swing.JLabel Instructions1;
+    private javax.swing.JLabel Instructions2;
+    private javax.swing.JRadioButton MediumButton;
+    private javax.swing.JButton Motocycle;
+    private javax.swing.JTextField NameEntry;
+    private javax.swing.JLabel RoadRage;
+    private javax.swing.JButton StartGame;
+    private javax.swing.JButton Truck;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel9;
-    // End of variables declaration                   
+    private javax.swing.JLabel lblHighScores;
+    // End of variables declaration//GEN-END:variables
 }
