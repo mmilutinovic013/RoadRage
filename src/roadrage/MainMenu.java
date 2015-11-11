@@ -18,15 +18,14 @@ public class MainMenu extends JFrame implements ActionListener {
     private JRadioButton easyGameButton;
     private JRadioButton mediumGameButton;
     private JRadioButton hardGameButton;
-    private JLabel mopedImage; // better name? 
-    private JLabel carImage; // better name? 
-    private JLabel truckImage; // better name? 
+    private JRadioButton mopedRadioButton;
+    private JRadioButton carRadioButton;
+    private JRadioButton truckRadioButton;
     private JPanel mainMenuPanel;
     private JPanel sidebarMenuPanel;
     private ButtonGroup difficultyButtons;
-
-   
-    int boardSize = 10;
+    private ButtonGroup vehicleSelectionButtons;
+    private JLabel welcomeMessage;
     
     // FIXED: Someone fix this spacing -- I'm moving onto other things. This should be simple in just  layout change.
     public MainMenu() {
@@ -37,26 +36,29 @@ public class MainMenu extends JFrame implements ActionListener {
         this.setLayout(new BorderLayout());
         mainMenuPanel = new JPanel();
         sidebarMenuPanel = new JPanel();
+        welcomeMessage = new JLabel("Welcome to Road Rage!\n Please Select a Vehicle and Difficulty Below"); // TODO: Fix this to be a new line
        
         difficultyButtons = new ButtonGroup();
+        vehicleSelectionButtons = new ButtonGroup();
         startGameButton = new JButton("Start Game");
         easyGameButton = new JRadioButton("Easy");
         mediumGameButton = new JRadioButton("Medium");
         hardGameButton = new JRadioButton("Hard");
         
+        mopedRadioButton = new JRadioButton(new ImageIcon("Pictures/motorcycle.png"));
+        carRadioButton = new JRadioButton(new ImageIcon("Pictures/subaru.png"));
+        truckRadioButton = new JRadioButton(new ImageIcon("Pictures/truckIcon.png"));
+        
         difficultyButtons.add(easyGameButton);
         difficultyButtons.add(mediumGameButton);
         difficultyButtons.add(hardGameButton);
+        
+        vehicleSelectionButtons.add(mopedRadioButton);
+        vehicleSelectionButtons.add(carRadioButton);
+        vehicleSelectionButtons.add(truckRadioButton);
       
         //map on board, weapon images
-        mainMenuPanel.setLayout(new GridLayout(10,10));
-        
-        mopedImage = new JLabel(new ImageIcon("Pictures/motorcycle.png"));
-        mopedImage.setAlignmentX(Component.CENTER_ALIGNMENT);
-        carImage = new JLabel(new ImageIcon("Pictures/subaru.png"));
-        carImage.setAlignmentX(Component.CENTER_ALIGNMENT);
-        truckImage = new JLabel(new ImageIcon("Pictures/truckIcon.png"));
-        truckImage.setAlignmentX(Component.CENTER_ALIGNMENT);
+        mainMenuPanel.setLayout(new BorderLayout(200,0));
 
         //setting up sidebar
         sidebarMenuPanel.setLayout(new BoxLayout(sidebarMenuPanel, BoxLayout.PAGE_AXIS));
@@ -66,9 +68,11 @@ public class MainMenu extends JFrame implements ActionListener {
         sidebarMenuPanel.add(mediumGameButton);
         sidebarMenuPanel.add(hardGameButton);
         sidebarMenuPanel.add(startGameButton);
-        sidebarMenuPanel.add(mopedImage);
-        sidebarMenuPanel.add(carImage);
-        sidebarMenuPanel.add(truckImage);
+        
+        mainMenuPanel.add(welcomeMessage, BorderLayout.PAGE_START);
+        mainMenuPanel.add(mopedRadioButton, BorderLayout.WEST);
+        mainMenuPanel.add(carRadioButton, BorderLayout.CENTER);
+        mainMenuPanel.add(truckRadioButton, BorderLayout.LINE_END);
 
         this.add(mainMenuPanel, BorderLayout.CENTER);
         this.add(sidebarMenuPanel, BorderLayout.LINE_END);
@@ -79,6 +83,10 @@ public class MainMenu extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object obj = e.getSource();
+        if(obj == startGameButton){
+            // Launch the game with settings
+            
+        }
     }
 }
