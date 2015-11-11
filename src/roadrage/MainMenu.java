@@ -41,6 +41,7 @@ public class MainMenu extends JFrame implements ActionListener {
         difficultyButtons = new ButtonGroup();
         vehicleSelectionButtons = new ButtonGroup();
         startGameButton = new JButton("Start Game");
+        startGameButton.addActionListener(this);
         easyGameButton = new JRadioButton("Easy");
         mediumGameButton = new JRadioButton("Medium");
         hardGameButton = new JRadioButton("Hard");
@@ -86,7 +87,7 @@ public class MainMenu extends JFrame implements ActionListener {
         Object obj = e.getSource();
         if(obj == startGameButton){
             // Launch the game with settings
-            
+            Board board = new Board();
         }
     }
 }
