@@ -32,7 +32,7 @@ public class Board extends JFrame implements ActionListener {
     }
     
     public void createComponents(){
-        this.setSize(800, 600);
+        this.setSize(1000, 800);
         this.setLayout(new BorderLayout());
         currentScore = 0; // Current Score starts at 0 upon game start.
         gameboardPanel = new JPanel();
@@ -42,12 +42,12 @@ public class Board extends JFrame implements ActionListener {
 
         //game board with map overlay
         gameboardPanel.setLayout(new BorderLayout());
-        gameboardPanel.setSize(600, 600);
+        gameboardPanel.setSize(800, 800);
         gameboardPanel.add(map, BorderLayout.CENTER);
 
         //setting up sidebar
         sidebarPanel.setLayout(new BoxLayout(sidebarPanel, BoxLayout.PAGE_AXIS));
-        sidebarPanel.setSize(200, 800);
+        sidebarPanel.setSize(400, 1000);
         sidebarPanel.add(tempButton);
 
         this.add(gameboardPanel, BorderLayout.CENTER);

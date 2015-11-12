@@ -32,7 +32,7 @@ public class MainMenu extends JFrame implements ActionListener {
         
         //setting up board layout
         super("Road Rage!");
-        this.setSize(800, 600);
+        this.setSize(1000, 800);
         this.setLayout(new BorderLayout());
         mainMenuPanel = new JPanel();
         sidebarMenuPanel = new JPanel();
@@ -63,7 +63,7 @@ public class MainMenu extends JFrame implements ActionListener {
 
         //setting up sidebar
         sidebarMenuPanel.setLayout(new BoxLayout(sidebarMenuPanel, BoxLayout.PAGE_AXIS));
-        sidebarMenuPanel.setSize(200, 800);
+        sidebarMenuPanel.setSize(400, 1000);
         sidebarMenuPanel.setBackground(Color.gray);
         sidebarMenuPanel.add(easyGameButton);
         sidebarMenuPanel.add(mediumGameButton);
