@@ -53,6 +53,7 @@ public class MainMenu extends JFrame implements ActionListener {
         difficultyButtons.add(easyGameButton);
         difficultyButtons.add(mediumGameButton);
         difficultyButtons.add(hardGameButton);
+        easyGameButton.setSelected(true);
         
         vehicleSelectionButtons.add(mopedRadioButton);
         vehicleSelectionButtons.add(carRadioButton);
