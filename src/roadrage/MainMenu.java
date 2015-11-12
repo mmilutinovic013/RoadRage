@@ -89,5 +89,6 @@ public class MainMenu extends JFrame implements ActionListener {
             // Launch the game with settings
             Board board = new Board(this);
         }
+        this.setVisible(false);
     }
 }
