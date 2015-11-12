@@ -58,7 +58,7 @@ public class Board extends JFrame implements ActionListener {
         sidebarPanel.setLayout(new BoxLayout(sidebarPanel, BoxLayout.PAGE_AXIS));
         sidebarPanel.setSize(400, 1000);
         sidebarPanel.add(tempButton);
-        tempButton = new JButton("End");
+        tempButton = new JButton("Quit");
         tempButton.addActionListener (new ActionListener ()
         {
 
