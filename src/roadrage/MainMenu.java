@@ -46,9 +46,9 @@ public class MainMenu extends JFrame implements ActionListener {
         mediumGameButton = new JRadioButton("Medium");
         hardGameButton = new JRadioButton("Hard");
         
-        mopedRadioButton = new JRadioButton(new ImageIcon("Pictures/motorcycle.png"));
+        mopedRadioButton = new JRadioButton(new ImageIcon("Pictures/motocorcycleFIXED.png"));
         carRadioButton = new JRadioButton(new ImageIcon("Pictures/subaru.png"));
-        truckRadioButton = new JRadioButton(new ImageIcon("Pictures/truckIcon.png"));
+        truckRadioButton = new JRadioButton(new ImageIcon("Pictures/truck.png"));
         
         difficultyButtons.add(easyGameButton);
         difficultyButtons.add(mediumGameButton);

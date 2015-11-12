@@ -37,7 +37,7 @@ public class Board extends JFrame implements ActionListener {
         currentScore = 0; // Current Score starts at 0 upon game start.
         gameboardPanel = new JPanel();
         sidebarPanel = new JPanel();
-        map = new JLabel(new ImageIcon("Pictures/RoadSevenHundred.png")); // Figure out proper image size
+        map = new JLabel(new ImageIcon("Pictures/Road800x800.png")); // Figure out proper image size
         tempButton = new JButton("Test");
 
         //game board with map overlay
