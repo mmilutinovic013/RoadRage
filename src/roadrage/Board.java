@@ -62,7 +62,7 @@ public class Board extends JFrame implements ActionListener {
 
             public void actionPerformed(ActionEvent e)
             {
-               objectfall(this.g); // this line needs to call object fall
+          //     objectfall(this.g); // this line needs to call object fall
             }
         });
     
@@ -133,15 +133,15 @@ public class Board extends JFrame implements ActionListener {
              y--;
              try
              {
-                 if(HardButton.isSelected())
+               //  if(HardButton.isSelected())
                  {
                      Thread.sleep(100);         // 80 seconds for the object to fall 
                  }
-                 else if(MediumButton.isSelected())
+               //  else if(MediumButton.isSelected())
                  {
                      Thread.sleep(50);         // 40 seconds for the object to fall 
                  }
-                 else
+              //   else
                  {
                     Thread.sleep(25);         // 20 seconds for the object to fall 
                  }
