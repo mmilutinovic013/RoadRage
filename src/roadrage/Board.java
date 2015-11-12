@@ -24,28 +24,37 @@ public class Board extends JFrame implements ActionListener {
     private JLabel map;
     private JPanel gameboardPanel;
     private JPanel sidebarPanel;
-    private JButton tempButton; // This is testing if the sidebar Panel exist
+    private JButton tempButton; // This is testing if the sidebar Panel exists
+    private int currentScore;
 
     public Board() {
         
         //setting up board layout
-        super("Board JFrame");
-        this.setSize(800, 600);
+        super("Road Rage Game Board");
+        this.createComponents();
+    }
+    
+    public void createComponents(){
+        this.setSize(1000, 800);
         this.setLayout(new BorderLayout());
+        currentScore = 0; // Current Score starts at 0 upon game start.
         gameboardPanel = new JPanel();
         sidebarPanel = new JPanel();
-        map = new JLabel(new ImageIcon("Pictures/RoadSevenHundred.png")); // Figure out proper image size
-        tempButton = new JButton("Test");
+        map = new JLabel(new ImageIcon("Pictures/Road800x800.png")); // Figure out proper image size
+        tempButton = new JButton("Start");
 
         //game board with map overlay
         gameboardPanel.setLayout(new BorderLayout());
-        gameboardPanel.setSize(600, 600);
+        gameboardPanel.setSize(800, 800);
         gameboardPanel.add(map, BorderLayout.CENTER);
 
         //setting up sidebar
         sidebarPanel.setLayout(new BoxLayout(sidebarPanel, BoxLayout.PAGE_AXIS));
-        sidebarPanel.setSize(200, 800);
+        sidebarPanel.setSize(400, 1000);
         sidebarPanel.add(tempButton);
+        tempButton = new JButton("End");
+        sidebarPanel.add(tempButton);
+        tempButton.addActionListener(this);
 
         this.add(gameboardPanel, BorderLayout.CENTER);
         this.add(sidebarPanel, BorderLayout.LINE_END);
@@ -54,9 +63,19 @@ public class Board extends JFrame implements ActionListener {
         this.setVisible(true);
     }
     
+    //
+    // This function updates the score and based off an inputted scoreUpdate variable that is a positive
+    // or negative number which is added to the score field
+    //
+    public void updateScore(int scoreUpdate){
+        currentScore += scoreUpdate;
+    }
+    
     public void actionPerformed(ActionEvent evt){
         
         Object obj = evt.getSource();
+        tempButton.setVisible(false);
+        this.dispose();
     }
  
   // trying to get objects to fall
