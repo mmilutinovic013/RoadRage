@@ -22,6 +22,7 @@ public class Board extends JFrame implements ActionListener {
     private JPanel gameboardPanel;
     private JPanel sidebarPanel;
     private JButton tempButton; // This is testing if the sidebar Panel exists
+    private int currentScore;
 
     public Board() {
         
@@ -49,6 +50,14 @@ public class Board extends JFrame implements ActionListener {
         
         this.setResizable(false);
         this.setVisible(true);
+    }
+    
+    //
+    // This function updates the score and based off an inputted scoreUpdate variable that is a positive
+    // or negative number which is added to the score field
+    //
+    public void updateScore(int scoreUpdate){
+        currentScore += scoreUpdate;
     }
     
     public void actionPerformed(ActionEvent evt){
