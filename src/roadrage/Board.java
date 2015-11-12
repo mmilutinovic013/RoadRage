@@ -27,9 +27,14 @@ public class Board extends JFrame implements ActionListener {
     public Board() {
         
         //setting up board layout
-        super("Board JFrame");
+        super("Road Rage Game Board");
+        this.createComponents();
+    }
+    
+    public void createComponents(){
         this.setSize(800, 600);
         this.setLayout(new BorderLayout());
+        currentScore = 0; // Current Score starts at 0 upon game start.
         gameboardPanel = new JPanel();
         sidebarPanel = new JPanel();
         map = new JLabel(new ImageIcon("Pictures/RoadSevenHundred.png")); // Figure out proper image size
