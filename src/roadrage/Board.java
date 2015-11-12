@@ -16,6 +16,10 @@ import java.awt.Rectangle;
 
 
 public class Board extends JFrame implements ActionListener {
+
+
+
+ 
     int y = 0;
     int x = 0;
     //TODO: We need Desk and Enemy baefore we can do Board
@@ -53,6 +57,15 @@ public class Board extends JFrame implements ActionListener {
         sidebarPanel.setSize(400, 1000);
         sidebarPanel.add(tempButton);
         tempButton = new JButton("End");
+        tempButton.addActionListener (new ActionListener ()
+        {
+
+            public void actionPerformed(ActionEvent e)
+            {
+             //  Board.objectfall(); // this line needs to call object fall
+            }
+        });
+    
         sidebarPanel.add(tempButton);
         tempButton.addActionListener(this);
 
@@ -78,14 +91,14 @@ public class Board extends JFrame implements ActionListener {
         this.dispose();
     }
  
-  // trying to get objects to fall
-    
-    
-    public void paintComponent(Graphics g)
+   
+            
+// trying to get objects to fall
+    public  void objectfall(Graphics g)
     {
         Graphics2D g2 = (Graphics2D) g;
         x=0;
-        y=0;
+        y=1000;
         int objmove = 0;
 
 // This creates the object 
@@ -110,14 +123,14 @@ public class Board extends JFrame implements ActionListener {
                     x = 600;
                 }
             
-   // This makes the object fall     
+// This makes the object fall     
          for( objmove = 0; objmove <100; objmove ++)
          {
              g.drawImage(img1,x,y,null);
              y--;
              try
              {
-              Thread.sleep(250);
+              Thread.sleep(50);         // 40 seconds for the object to fall i think
              }
              
               catch (InterruptedException e)
