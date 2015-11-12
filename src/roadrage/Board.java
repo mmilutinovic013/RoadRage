@@ -86,7 +86,7 @@ public class Board extends JFrame implements ActionListener {
         Graphics2D g2 = (Graphics2D) g;
         x=0;
         y=0;
-        int objmove;
+        int objmove = 0;
 
 // This creates the object 
             Image img1 = Toolkit.getDefaultToolkit().getImage("obstacle.png");
@@ -99,19 +99,19 @@ public class Board extends JFrame implements ActionListener {
 // this creates the starting location  of the object randomly
             if(lane == 1)
                 {
-                    x= 100;
+                    x= 200;
                 }
             if(lane == 2)
                 {
-                    x= 300;
+                    x= 400;
                 }
             if(lane == 3)
                 {
-                    x = 500;
+                    x = 600;
                 }
             
    // This makes the object fall     
-        // for( objmove = 0; objmove++; objmove < 100)
+         for( objmove = 0; objmove <100; objmove ++)
          {
              g.drawImage(img1,x,y,null);
              y--;
@@ -126,10 +126,10 @@ public class Board extends JFrame implements ActionListener {
              }
          }
             
-         }
+    }
      
         
         
-    }
+}
 
     
