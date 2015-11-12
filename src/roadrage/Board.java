@@ -62,7 +62,7 @@ public class Board extends JFrame implements ActionListener {
 
             public void actionPerformed(ActionEvent e)
             {
-             //  Board.objectfall(); // this line needs to call object fall
+               objectfall(this.g); // this line needs to call object fall
             }
         });
     
@@ -93,15 +93,18 @@ public class Board extends JFrame implements ActionListener {
  
    
             
-// trying to get objects to fall
+// trying to get an objects to fall
     public  void objectfall(Graphics g)
     {
+        super.paintComponents(g);
         Graphics2D g2 = (Graphics2D) g;
         x=0;
         y=1000;
         int objmove = 0;
 
-// This creates the object 
+// This creates the object 50 times
+        for(int objcount =0; objcount <50; objcount ++)
+        {
             Image img1 = Toolkit.getDefaultToolkit().getImage("obstacle.png");
             g2.drawImage(img1,180,180,this);
             g2.finalize();
@@ -130,7 +133,19 @@ public class Board extends JFrame implements ActionListener {
              y--;
              try
              {
-              Thread.sleep(50);         // 40 seconds for the object to fall i think
+                 if(HardButton.isSelected())
+                 {
+                     Thread.sleep(100);         // 80 seconds for the object to fall 
+                 }
+                 else if(MediumButton.isSelected())
+                 {
+                     Thread.sleep(50);         // 40 seconds for the object to fall 
+                 }
+                 else
+                 {
+                    Thread.sleep(25);         // 20 seconds for the object to fall 
+                 }
+
              }
              
               catch (InterruptedException e)
@@ -138,7 +153,7 @@ public class Board extends JFrame implements ActionListener {
                  e.printStackTrace();
              }
          }
-            
+        }     
     }
      
         
