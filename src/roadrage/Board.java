@@ -38,7 +38,7 @@ public class Board extends JFrame implements ActionListener {
         gameboardPanel = new JPanel();
         sidebarPanel = new JPanel();
         map = new JLabel(new ImageIcon("Pictures/Road800x800.png")); // Figure out proper image size
-        tempButton = new JButton("Test");
+        tempButton = new JButton("Start");
 
         //game board with map overlay
         gameboardPanel.setLayout(new BorderLayout());
@@ -49,6 +49,9 @@ public class Board extends JFrame implements ActionListener {
         sidebarPanel.setLayout(new BoxLayout(sidebarPanel, BoxLayout.PAGE_AXIS));
         sidebarPanel.setSize(400, 1000);
         sidebarPanel.add(tempButton);
+        tempButton = new JButton("End");
+        sidebarPanel.add(tempButton);
+        tempButton.addActionListener(this);
 
         this.add(gameboardPanel, BorderLayout.CENTER);
         this.add(sidebarPanel, BorderLayout.LINE_END);
@@ -69,6 +72,8 @@ public class Board extends JFrame implements ActionListener {
         
         //action events
         Object obj = evt.getSource();
+        tempButton.setVisible(false);
+        this.dispose();
     }
 }
     
