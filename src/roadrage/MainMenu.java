@@ -87,7 +87,7 @@ public class MainMenu extends JFrame implements ActionListener {
         Object obj = e.getSource();
         if(obj == startGameButton){
             // Launch the game with settings
-            Board board = new Board();
+            Board board = new Board(this);
         }
     }
 }
