@@ -26,12 +26,14 @@ public class Board extends JFrame implements ActionListener {
     private JPanel sidebarPanel;
     private JButton tempButton; // This is testing if the sidebar Panel exists
     private int currentScore;
-
-    public Board() {
+    private MainMenu menu;
+    
+    public Board(MainMenu theMenu) {
         
         //setting up board layout
         super("Road Rage Game Board");
         this.createComponents();
+         menu = theMenu;
     }
     
     public void createComponents(){
@@ -76,6 +78,7 @@ public class Board extends JFrame implements ActionListener {
         Object obj = evt.getSource();
         tempButton.setVisible(false);
         this.dispose();
+        menu.setVisible(true);
     }
  
   // trying to get objects to fall
