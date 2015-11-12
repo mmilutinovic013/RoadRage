@@ -30,12 +30,14 @@ public class Board extends JFrame implements ActionListener {
     private JPanel sidebarPanel;
     private JButton tempButton; // This is testing if the sidebar Panel exists
     private int currentScore;
-
-    public Board() {
+    private MainMenu menu;
+    
+    public Board(MainMenu theMenu) {
         
         //setting up board layout
         super("Road Rage Game Board");
         this.createComponents();
+         menu = theMenu;
     }
     
     public void createComponents(){
@@ -56,7 +58,7 @@ public class Board extends JFrame implements ActionListener {
         sidebarPanel.setLayout(new BoxLayout(sidebarPanel, BoxLayout.PAGE_AXIS));
         sidebarPanel.setSize(400, 1000);
         sidebarPanel.add(tempButton);
-        tempButton = new JButton("End");
+        tempButton = new JButton("Quit");
         tempButton.addActionListener (new ActionListener ()
         {
 
@@ -89,6 +91,7 @@ public class Board extends JFrame implements ActionListener {
         Object obj = evt.getSource();
         tempButton.setVisible(false);
         this.dispose();
+        menu.setVisible(true);
     }
  
    
