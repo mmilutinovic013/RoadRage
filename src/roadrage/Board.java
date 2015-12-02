@@ -64,7 +64,7 @@ public class Board extends JFrame implements ActionListener {
 
             public void actionPerformed(ActionEvent e)
             {
-          //     objectfall(this.g); // this line needs to call object fall
+               ObjectsFalling(); // this line needs to call object fall
             }
         });
     
@@ -86,79 +86,84 @@ public class Board extends JFrame implements ActionListener {
         currentScore += scoreUpdate;
     }
     
-    public void actionPerformed(ActionEvent evt){
-        
-        Object obj = evt.getSource();
-        tempButton.setVisible(false);
-        this.dispose();
-        menu.setVisible(true);
-    }
- 
+//    public void actionPerformed(ActionEvent evt){
+//        
+//        Object obj = evt.getSource();
+//        tempButton.setVisible(false);
+//        this.dispose();
+//        menu.setVisible(true);
+//    }
+// 
    
             
 // trying to get an objects to fall
-    public  void objectfall(Graphics g)
-    {
-        super.paintComponents(g);
-        Graphics2D g2 = (Graphics2D) g;
-        x=0;
-        y=1000;
-        int objmove = 0;
+////    public  void objectfall(Graphics g)
+//    {
+//        super.paintComponents(g);
+//        Graphics2D g2 = (Graphics2D) g;
+//        x=0;
+//        y=1000;
+//        int objmove = 0;
+//
+//// This creates the object 50 times
+//        for(int objcount =0; objcount <50; objcount ++)
+//        {
+//            Image img1 = Toolkit.getDefaultToolkit().getImage("obstacle.png");
+//            g2.drawImage(img1,180,180,this);
+//            g2.finalize();
+//
+//// this will randomly select the lane (1-3)
+//            
+//            int lane =  (int) Math.ceil ((Math.random() * 2)+ 1);
+//// this creates the starting location  of the object randomly
+//            if(lane == 1)
+//                {
+//                    x= 200;
+//                }
+//            if(lane == 2)
+//                {
+//                    x= 400;
+//                }
+//            if(lane == 3)
+//                {
+//                    x = 600;
+//                }
+//            
+//// This makes the object fall     
+//         for( objmove = 0; objmove <100; objmove ++)
+//         {
+//             g.drawImage(img1,x,y,null);
+//             y--;
+//             try
+//             {
+//               //  if(HardButton.isSelected())
+//                 {
+//                     Thread.sleep(100);         // 80 seconds for the object to fall 
+//                 }
+//               //  else if(MediumButton.isSelected())
+//                 {
+//                     Thread.sleep(50);         // 40 seconds for the object to fall 
+//                 }
+//              //   else
+//                 {
+//                    Thread.sleep(25);         // 20 seconds for the object to fall 
+//                 }
+//
+//             }
+//             
+//              catch (InterruptedException e)
+//             {
+//                 e.printStackTrace();
+//             }
+//         }
+//        }     
+//    }
+//     
 
-// This creates the object 50 times
-        for(int objcount =0; objcount <50; objcount ++)
-        {
-            Image img1 = Toolkit.getDefaultToolkit().getImage("obstacle.png");
-            g2.drawImage(img1,180,180,this);
-            g2.finalize();
-
-// this will randomly select the lane (1-3)
-            
-            int lane =  (int) Math.ceil ((Math.random() * 2)+ 1);
-// this creates the starting location  of the object randomly
-            if(lane == 1)
-                {
-                    x= 200;
-                }
-            if(lane == 2)
-                {
-                    x= 400;
-                }
-            if(lane == 3)
-                {
-                    x = 600;
-                }
-            
-// This makes the object fall     
-         for( objmove = 0; objmove <100; objmove ++)
-         {
-             g.drawImage(img1,x,y,null);
-             y--;
-             try
-             {
-               //  if(HardButton.isSelected())
-                 {
-                     Thread.sleep(100);         // 80 seconds for the object to fall 
-                 }
-               //  else if(MediumButton.isSelected())
-                 {
-                     Thread.sleep(50);         // 40 seconds for the object to fall 
-                 }
-              //   else
-                 {
-                    Thread.sleep(25);         // 20 seconds for the object to fall 
-                 }
-
-             }
-             
-              catch (InterruptedException e)
-             {
-                 e.printStackTrace();
-             }
-         }
-        }     
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-     
         
         
 }
