@@ -24,7 +24,6 @@ public class Board extends JFrame implements ActionListener {
     private JButton startButton; // This is testing if the sidebar Panel exists
     private JButton quitButton; // This is testing if the sidebar Panel exists
     private int currentScore;
-    private int currentHealth;
     private MainMenu menu;
     
     public Board(MainMenu theMenu) {
@@ -42,13 +41,15 @@ public class Board extends JFrame implements ActionListener {
         this.setLayout(new BorderLayout());
         map = new JLabel(new ImageIcon("Pictures/Road800x800.png"));// Figure out proper image size
         currentScore = 0; // Current Score starts at 0 upon game start.
-        currentHealth = 100;
         
         gameboardPanel = new JPanel();
         sidebarPanel = new JPanel();
         foreGroundPanel = new JPanel();
         Car car = new Car();
-
+        
+        
+       
+        
         startButton = new JButton("Start");
         startButton.addActionListener(this);
         //game board with map overlay
@@ -61,8 +62,9 @@ public class Board extends JFrame implements ActionListener {
         sidebarPanel.setSize(400, 1000);
         sidebarPanel.add(startButton);
         
-        //foreGroundPanel.setLayout(null());
+        foreGroundPanel.setLayout(null());
         foreGroundPanel.setSize(800, 800);
+        
         
         quitButton = new JButton("Quit");
 
@@ -72,7 +74,10 @@ public class Board extends JFrame implements ActionListener {
         
         this.add(gameboardPanel, BorderLayout.CENTER);
         this.add(sidebarPanel, BorderLayout.LINE_END);
-
+        
+        
+        
+        
         this.setResizable(false);
         this.setVisible(true);
     }
@@ -82,10 +87,6 @@ public class Board extends JFrame implements ActionListener {
     //
     public void updateScore(int scoreUpdate){
         currentScore += scoreUpdate;
-    }
-    
-    public void updateHealth(int healthUpdate){
-        currentHealth += currentHealth;
     }
     
     public void actionPerformed(ActionEvent evt){
