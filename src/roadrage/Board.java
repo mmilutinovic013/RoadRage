@@ -20,6 +20,7 @@ public class Board extends JFrame implements ActionListener {
     private JLabel map;
     private JPanel gameboardPanel;
     private JPanel sidebarPanel;
+    private JPanel foreGroundPanel;
     private JButton startButton; // This is testing if the sidebar Panel exists
     private JButton quitButton; // This is testing if the sidebar Panel exists
     private int currentScore;
@@ -32,15 +33,23 @@ public class Board extends JFrame implements ActionListener {
         super();
         this.createComponents();
         menu = theMenu;
+        
     }
     
     public void createComponents(){
         this.setSize(1000, 800);
         this.setLayout(new BorderLayout());
+        map = new JLabel(new ImageIcon("Pictures/Road800x800.png"));// Figure out proper image size
         currentScore = 0; // Current Score starts at 0 upon game start.
+        
         gameboardPanel = new JPanel();
         sidebarPanel = new JPanel();
-        map = new JLabel(new ImageIcon("Pictures/Road800x800.png")); // Figure out proper image size
+        foreGroundPanel = new JPanel();
+        Car car = new Car();
+        
+        
+       
+        
         startButton = new JButton("Start");
         startButton.addActionListener(this);
         //game board with map overlay
@@ -53,13 +62,21 @@ public class Board extends JFrame implements ActionListener {
         sidebarPanel.setSize(400, 1000);
         sidebarPanel.add(startButton);
         
+        foreGroundPanel.setLayout(null());
+        foreGroundPanel.setSize(800, 800);
+        
+        
         quitButton = new JButton("Quit");
 
         sidebarPanel.add(quitButton);
         quitButton.addActionListener(this);
-
+        foreGroundPanel.add(car);
+        
         this.add(gameboardPanel, BorderLayout.CENTER);
         this.add(sidebarPanel, BorderLayout.LINE_END);
+        
+        
+        
         
         this.setResizable(false);
         this.setVisible(true);
