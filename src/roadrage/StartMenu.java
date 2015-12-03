@@ -172,7 +172,8 @@ public class StartMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void StartGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartGameActionPerformed
-
+        //Board board = new Board(this);
+        System.out.println("Here");
         // this needs to call the game panel
     }//GEN-LAST:event_StartGameActionPerformed
 

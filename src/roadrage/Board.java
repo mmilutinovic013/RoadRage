@@ -28,16 +28,18 @@ public class Board extends JFrame implements ActionListener {
     private JLabel map;
     private JPanel gameboardPanel;
     private JPanel sidebarPanel;
-    private JButton tempButton; // This is testing if the sidebar Panel exists
+    private JButton startButton; // This is testing if the sidebar Panel exists
+    private JButton quitButton; // This is testing if the sidebar Panel exists
     private int currentScore;
     private MainMenu menu;
     
     public Board(MainMenu theMenu) {
         
         //setting up board layout
-        super("Road Rage Game Board");
+        //theFrame = new JFrame("Road Rage Game Board"); //super("Road Rage Game Board");
+        super();
         this.createComponents();
-         menu = theMenu;
+        menu = theMenu;
     }
     
     public void createComponents(){
@@ -47,8 +49,8 @@ public class Board extends JFrame implements ActionListener {
         gameboardPanel = new JPanel();
         sidebarPanel = new JPanel();
         map = new JLabel(new ImageIcon("Pictures/Road800x800.png")); // Figure out proper image size
-        tempButton = new JButton("Start");
-
+        startButton = new JButton("Start");
+        startButton.addActionListener(this);
         //game board with map overlay
         gameboardPanel.setLayout(new BorderLayout());
         gameboardPanel.setSize(800, 800);
@@ -57,9 +59,11 @@ public class Board extends JFrame implements ActionListener {
         //setting up sidebar
         sidebarPanel.setLayout(new BoxLayout(sidebarPanel, BoxLayout.PAGE_AXIS));
         sidebarPanel.setSize(400, 1000);
-        sidebarPanel.add(tempButton);
-        tempButton = new JButton("Quit");
-        tempButton.addActionListener (new ActionListener ()
+        sidebarPanel.add(startButton);
+        
+        quitButton = new JButton("Quit");
+        
+        /*quitButton.addActionListener (new ActionListener ()
         {
 
             public void actionPerformed(ActionEvent e)
@@ -67,9 +71,10 @@ public class Board extends JFrame implements ActionListener {
                ObjectsFalling(); // this line needs to call object fall
             }
         });
+        */
     
-        sidebarPanel.add(tempButton);
-        tempButton.addActionListener(this);
+        sidebarPanel.add(quitButton);
+        quitButton.addActionListener(this);
 
         this.add(gameboardPanel, BorderLayout.CENTER);
         this.add(sidebarPanel, BorderLayout.LINE_END);
@@ -86,86 +91,19 @@ public class Board extends JFrame implements ActionListener {
         currentScore += scoreUpdate;
     }
     
-//    public void actionPerformed(ActionEvent evt){
-//        
-//        Object obj = evt.getSource();
-//        tempButton.setVisible(false);
-//        this.dispose();
-//        menu.setVisible(true);
-//    }
-// 
-   
-            
-// trying to get an objects to fall
-////    public  void objectfall(Graphics g)
-//    {
-//        super.paintComponents(g);
-//        Graphics2D g2 = (Graphics2D) g;
-//        x=0;
-//        y=1000;
-//        int objmove = 0;
-//
-//// This creates the object 50 times
-//        for(int objcount =0; objcount <50; objcount ++)
-//        {
-//            Image img1 = Toolkit.getDefaultToolkit().getImage("obstacle.png");
-//            g2.drawImage(img1,180,180,this);
-//            g2.finalize();
-//
-//// this will randomly select the lane (1-3)
-//            
-//            int lane =  (int) Math.ceil ((Math.random() * 2)+ 1);
-//// this creates the starting location  of the object randomly
-//            if(lane == 1)
-//                {
-//                    x= 200;
-//                }
-//            if(lane == 2)
-//                {
-//                    x= 400;
-//                }
-//            if(lane == 3)
-//                {
-//                    x = 600;
-//                }
-//            
-//// This makes the object fall     
-//         for( objmove = 0; objmove <100; objmove ++)
-//         {
-//             g.drawImage(img1,x,y,null);
-//             y--;
-//             try
-//             {
-//               //  if(HardButton.isSelected())
-//                 {
-//                     Thread.sleep(100);         // 80 seconds for the object to fall 
-//                 }
-//               //  else if(MediumButton.isSelected())
-//                 {
-//                     Thread.sleep(50);         // 40 seconds for the object to fall 
-//                 }
-//              //   else
-//                 {
-//                    Thread.sleep(25);         // 20 seconds for the object to fall 
-//                 }
-//
-//             }
-//             
-//              catch (InterruptedException e)
-//             {
-//                 e.printStackTrace();
-//             }
-//         }
-//        }     
-//    }
-//     
-
-    @Override
-    public void actionPerformed(ActionEvent ae) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void actionPerformed(ActionEvent evt){
+        
+        Object obj = evt.getSource();
+        if(obj == startButton){
+            ObjectsFalling falling = new ObjectsFalling();
+            System.out.println("here");
+        }
+        else if(obj == quitButton){
+            this.dispose();
+        }
+        //tempButton.setVisible(false);
+        menu.setVisible(true);
     }
-        
-        
 }
 
     
