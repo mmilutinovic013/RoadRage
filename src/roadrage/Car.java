@@ -1,3 +1,4 @@
+package roadrage;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -15,7 +16,7 @@ public class Car extends JPanel implements ActionListener, KeyListener {
 
     Timer t = new Timer(5, this);
     
-    int x = 350, y = 250;
+    int x = 350, y = 600;
     double velx = 0;
 
     public Car() {
@@ -28,7 +29,7 @@ public class Car extends JPanel implements ActionListener, KeyListener {
 
      public void paintComponent(Graphics g){
         super.paintComponent(g);
-        ImageIcon i = new ImageIcon("W:\\IST311\\realprototype2\\ProductUnknown\\Tests\\src\\subaru.png");
+        ImageIcon i = new ImageIcon("Pictures/subaru.png");
         i.paintIcon(this, g, x, y);
         requestFocusInWindow();
         
@@ -41,11 +42,11 @@ public class Car extends JPanel implements ActionListener, KeyListener {
     }
 
     public void left() {
-        velx = -50.00;
+        velx = -200.00;
     }
 
     public void right() {
-        velx = 50.00;
+        velx = 200.00;
     }
 
     public void keyPressed(KeyEvent e) {

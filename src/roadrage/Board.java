@@ -18,9 +18,9 @@ import java.awt.Rectangle;
 public class Board extends JFrame implements ActionListener {
 
     private JLabel map;
-    private JPanel gameboardPanel;
-    private JPanel sidebarPanel;
-    private JPanel foreGroundPanel;
+    private JLayeredPane gameboard;
+    private JLayeredPane sidebar;
+    private JLayeredPane foreGround;
     private JButton startButton; // This is testing if the sidebar Panel exists
     private JButton quitButton; // This is testing if the sidebar Panel exists
     private int currentScore;
@@ -42,9 +42,9 @@ public class Board extends JFrame implements ActionListener {
         map = new JLabel(new ImageIcon("Pictures/Road800x800.png"));// Figure out proper image size
         currentScore = 0; // Current Score starts at 0 upon game start.
         
-        gameboardPanel = new JPanel();
-        sidebarPanel = new JPanel();
-        foreGroundPanel = new JPanel();
+        gameboard = new JLayeredPane();
+        sidebar = new JLayeredPane();
+        foreGround = new JLayeredPane();
         Car car = new Car();
         
         
@@ -53,28 +53,29 @@ public class Board extends JFrame implements ActionListener {
         startButton = new JButton("Start");
         startButton.addActionListener(this);
         //game board with map overlay
-        gameboardPanel.setLayout(new BorderLayout());
-        gameboardPanel.setSize(800, 800);
-        gameboardPanel.add(map, BorderLayout.CENTER);
+        
+        gameboard.setSize(800, 800);
+        gameboard.add(map);
 
         //setting up sidebar
-        sidebarPanel.setLayout(new BoxLayout(sidebarPanel, BoxLayout.PAGE_AXIS));
-        sidebarPanel.setSize(400, 1000);
-        sidebarPanel.add(startButton);
         
-        foreGroundPanel.setLayout(null());
-        foreGroundPanel.setSize(800, 800);
+        sidebar.setSize(400, 1000);
+        sidebar.add(startButton);
+        
+       
+        foreGround.setSize(800, 800);
+        foreGround.setOpaque(false);
         
         
         quitButton = new JButton("Quit");
 
-        sidebarPanel.add(quitButton);
+        sidebar.add(quitButton);
         quitButton.addActionListener(this);
-        foreGroundPanel.add(car);
+        foreGround.add(car);
         
-        this.add(gameboardPanel, BorderLayout.CENTER);
-        this.add(sidebarPanel, BorderLayout.LINE_END);
-        
+        this.add(gameboard);
+        this.add(sidebar);
+        this.add(foreGround);
         
         
         
@@ -101,5 +102,6 @@ public class Board extends JFrame implements ActionListener {
         }
     }
 }
+
 
     
