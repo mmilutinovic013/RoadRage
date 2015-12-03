@@ -68,7 +68,7 @@ public class Board extends JFrame implements ActionListener {
 
             public void actionPerformed(ActionEvent e)
             {
-               ObjectsFalling(); // this line needs to call object fall
+               //ObjectsFalling(); // this line needs to call object fall
             }
         });
         */
@@ -91,7 +91,16 @@ public class Board extends JFrame implements ActionListener {
         currentScore += scoreUpdate;
     }
     
+<<<<<<< HEAD
     public void actionPerformed(ActionEvent evt){
+=======
+
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+        
+>>>>>>> 38db9595a0e4317290a7e2eec226334003148b2a
         
         Object obj = evt.getSource();
         if(obj == startButton){
