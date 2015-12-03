@@ -25,19 +25,18 @@ import javax.swing.*;
  * @author sab5964
  */
 
-public class ObjectsFalling extends JPanel implements ActionListener, KeyListener {
+public class ObjectsFalling extends JPanel implements ActionListener {
 
-    Timer t = new Timer(5, this);
+    Timer t = new Timer(5, this);                                                // if the objects move to slowly change the numerical value
 
     
-    double x = 100, vely = 25, y = 25, velx = -25;
-   // int min = 1,max = 3;
+    double x = 100, vely = 25, y = 25, velx = -25;                               // if the objects are falling to slowly/quickly change y higher/lower
+
     Random rand = new Random();
     
 
     public void second() {
         t.start();
-        addKeyListener(this);
         setFocusable(true);
         setFocusTraversalKeysEnabled(false);
         
@@ -45,11 +44,11 @@ public class ObjectsFalling extends JPanel implements ActionListener, KeyListene
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        Graphics2D g2;
+        Graphics2D g2 = null;
+        Image img1 = Toolkit.getDefaultToolkit().getImage("obstacle.png");
+        g2.drawImage(img1,180,180,this);
+        g2.finalize();
         g2 = (Graphics2D) g;
-        g2.fill(new Ellipse2D.Double(x, y, 40, 40));
-        
-
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -58,14 +57,12 @@ public class ObjectsFalling extends JPanel implements ActionListener, KeyListene
     }
 
     public void firstrow() {
-       // velx = -200.00;
         y = 25;
         x= 100;
         down();
     }
 
     public void secondrow() {
-       // velx = 200.00;
         y = 25;
         x=200;
         down();
@@ -82,20 +79,19 @@ public class ObjectsFalling extends JPanel implements ActionListener, KeyListene
     {
         for( int w =0; w<14; w++)
         {
-        y += vely;  // if the object falls to fast/slow change vely
+        y += vely;                                                                // if the object falls to fast/slow change vely
        repaint();
-       // if this has a timer then the object will fall at a normal rate
-       // Thread.sleep(50);
+       second();
         
      
         }
     }
     
 
-    public void keyPressed(KeyEvent e) // this needs to be changed to startbutton was pressed
+    public void ObjectsFalling ()                                                // this needs to be changed to startbutton was pressed
     {
-        int code = e.getKeyCode();
-        for( int q =0; q<10; q++)
+
+        for( int q =0; q<10; q++)                                                 // this will send 10 things down
         {
             int RandSlot = rand.nextInt((3)) + 1;
             if (RandSlot == 1) {
@@ -113,17 +109,11 @@ public class ObjectsFalling extends JPanel implements ActionListener, KeyListene
                 thirdrow();
                 down();
             }
-            if ( code == KeyEvent.VK_DOWN)
+           
             {
                 down();
                 y+= vely;
             }
         }    
     }
-
-    public void keyTyped(KeyEvent e) {
-    }
-
-    public void keyReleased(KeyEvent e) {
-    }
-}  
+}
