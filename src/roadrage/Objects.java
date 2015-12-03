@@ -9,7 +9,7 @@ import java.util.Random;
 import javax.swing.*;
 
 
-public class ObjectsFalling extends JPanel implements ActionListener {
+public class Objects extends JPanel implements ActionListener {
 
     Timer t = new Timer(5, this);                                                // if the objects move to slowly change the numerical value
     double x = 100, vely = 25, y = 25, velx = -25;                               // if the objects are falling to slowly/quickly change y higher/lower
