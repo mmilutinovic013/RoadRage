@@ -54,17 +54,7 @@ public class Board extends JFrame implements ActionListener {
         sidebarPanel.add(startButton);
         
         quitButton = new JButton("Quit");
-        
-        /*quitButton.addActionListener (new ActionListener ()
-        {
 
-            public void actionPerformed(ActionEvent e)
-            {
-               //ObjectsFalling(); // this line needs to call object fall
-            }
-        });
-        */
-    
         sidebarPanel.add(quitButton);
         quitButton.addActionListener(this);
 
@@ -74,7 +64,6 @@ public class Board extends JFrame implements ActionListener {
         this.setResizable(false);
         this.setVisible(true);
     }
-    
     //
     // This function updates the score and based off an inputted scoreUpdate variable that is a positive
     // or negative number which is added to the score field
@@ -91,9 +80,8 @@ public class Board extends JFrame implements ActionListener {
         }
         else if(obj == quitButton){
             this.dispose();
+            menu.setVisible(true);
         }
-        //tempButton.setVisible(false);
-        menu.setVisible(true);
     }
 }
 
