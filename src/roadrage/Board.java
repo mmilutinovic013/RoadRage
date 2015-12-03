@@ -17,6 +17,14 @@ import java.awt.Rectangle;
 
 public class Board extends JFrame implements ActionListener {
 
+
+
+ 
+    int y = 0;
+    int x = 0;
+    //TODO: We need Desk and Enemy baefore we can do Board
+    // GridLayout? 
+    // Push
     private JLabel map;
     private JPanel gameboardPanel;
     private JPanel sidebarPanel;
@@ -31,8 +39,6 @@ public class Board extends JFrame implements ActionListener {
         this.createComponents();
          menu = theMenu;
     }
-    
-    
     
     public void createComponents(){
         this.setSize(1000, 800);
