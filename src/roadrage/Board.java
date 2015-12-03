@@ -24,6 +24,7 @@ public class Board extends JFrame implements ActionListener {
     private JButton startButton; // This is testing if the sidebar Panel exists
     private JButton quitButton; // This is testing if the sidebar Panel exists
     private int currentScore;
+    private int currentHealth;
     private MainMenu menu;
     
     public Board(MainMenu theMenu) {
@@ -41,7 +42,7 @@ public class Board extends JFrame implements ActionListener {
         this.setLayout(new BorderLayout());
         map = new JLabel(new ImageIcon("Pictures/Road800x800.png"));// Figure out proper image size
         currentScore = 0; // Current Score starts at 0 upon game start.
-        
+        currentHealth = 100;
         gameboard = new JLayeredPane();
         sidebar = new JLayeredPane();
         foreGround = new JLayeredPane();
@@ -82,12 +83,18 @@ public class Board extends JFrame implements ActionListener {
         this.setResizable(false);
         this.setVisible(true);
     }
+    
     //
-    // This function updates the score and based off an inputted scoreUpdate variable that is a positive
-    // or negative number which is added to the score field
+    // This will be called when Object is dodged.
     //
     public void updateScore(int scoreUpdate){
         currentScore += scoreUpdate;
+    }
+    //
+    // This will be called on collision.
+    //
+    public void updateHealth(int healthUpdate){
+        currentHealth += healthUpdate;
     }
     
     public void actionPerformed(ActionEvent evt){
