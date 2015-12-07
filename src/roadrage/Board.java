@@ -75,7 +75,7 @@ public class Board extends JFrame implements ActionListener {
         this.add(sidebarPanel, BorderLayout.LINE_END);
         //this.add(foreGroundPanel);
         
-        
+  
         
         this.setResizable(false);
         this.setVisible(true);
@@ -92,7 +92,8 @@ public class Board extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent evt){
         Object obj = evt.getSource();
         if(obj == startButton){
-            //ObjectsFalling falling = new ObjectsFalling();
+           Objects falling = new Objects();
+            background.add(falling);
             System.out.println("here");
         }
         else if(obj == quitButton){

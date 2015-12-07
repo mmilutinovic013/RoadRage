@@ -64,8 +64,9 @@ public class Objects extends JPanel implements ActionListener {
         }
     }
     
-    public void ObjectsFalling ()                                                // this needs to be changed to startbutton was pressed
+    public void Objects()                                                // this needs to be changed to startbutton was pressed
     {
+        System.out.println("objects");
         for( int q =0; q<10; q++)                                                 // this will send 10 things down
         {
             int RandSlot = rand.nextInt((3)) + 1;
