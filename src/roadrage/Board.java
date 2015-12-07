@@ -19,7 +19,6 @@ public class Board extends JFrame implements ActionListener {
 
     private JLabel map;
     private JPanel sidebarPanel;
-    
     private JButton startButton; // This is testing if the sidebar Panel exists
     private JButton quitButton; // This is testing if the sidebar Panel exists
     private JPanel background;
