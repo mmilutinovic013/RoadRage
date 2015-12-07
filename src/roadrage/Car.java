@@ -23,8 +23,9 @@ public class Car extends JPanel implements ActionListener, KeyListener {
         t.start();
         addKeyListener(this);
         setFocusable(true);
+        setOpaque(false);
         setFocusTraversalKeysEnabled(false);
-        ImageIcon image = new ImageIcon ("W:\\\\IST311\\\\realprototype2\\\\ProductUnknown\\\\Tests\\\\src\\\\subaru.png");
+        //ImageIcon image = new ImageIcon ("W:\\\\IST311\\\\realprototype2\\\\ProductUnknown\\\\Tests\\\\src\\\\subaru.png");
     }
 
      public void paintComponent(Graphics g){
