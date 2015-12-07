@@ -19,7 +19,6 @@ public class Board extends JFrame implements ActionListener {
 
     private JLabel map;
     private JPanel sidebarPanel;
-    
     private JButton startButton; // This is testing if the sidebar Panel exists
     private JButton quitButton; // This is testing if the sidebar Panel exists
     private JPanel background;
@@ -92,7 +91,7 @@ public class Board extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent evt){
         Object obj = evt.getSource();
         if(obj == startButton){
-            //ObjectsFalling falling = new ObjectsFalling();
+            Objects falling = new Objects();
             System.out.println("here");
         }
         else if(obj == quitButton){
