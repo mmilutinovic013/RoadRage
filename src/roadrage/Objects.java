@@ -17,8 +17,6 @@ public class Objects extends JPanel implements ActionListener {
     
     public void second() {
         t.start();
-        setFocusable(true);
-        setFocusTraversalKeysEnabled(false);
     }
     
     public void paintComponent(Graphics g) {
@@ -83,7 +81,7 @@ public class Objects extends JPanel implements ActionListener {
                 thirdrow();
                 down();
             }
-            {
+            else{
                 down();
                 y+= vely;
             }
