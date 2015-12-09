@@ -15,8 +15,35 @@ public class Objects extends JPanel implements ActionListener {
     double x = 100, vely = 25, y = 25, velx = -25;                               // if the objects are falling to slowly/quickly change y higher/lower
     Random rand = new Random();
     
-    public void second() {
+    public Objects()                                                // this needs to be changed to startbutton was pressed
+    {
         t.start();
+        System.out.println("objects");
+        for( int q =0; q<10; q++)                                                 // this will send 10 things down
+        {
+            int RandSlot = rand.nextInt((3)) + 1;
+            if (RandSlot == 1) {
+                firstrow();
+                down();
+            }
+            if (RandSlot == 2) {
+                secondrow();
+                down();
+            }
+            if(RandSlot == 3)
+            {
+                thirdrow();
+                down();
+            }
+            else{
+                down();
+                y+= vely;
+            }
+        }    
+    }
+    
+    public void second() {
+        //t.start();
     }
     
     public void paintComponent(Graphics g) {
@@ -51,7 +78,7 @@ public class Objects extends JPanel implements ActionListener {
         down();
     }
     
-    Timer timer = new Timer(500, null);
+    //Timer timer = new Timer(500, null);
     public void down()
     {
         for( int w =0; w<14; w++)
@@ -60,31 +87,5 @@ public class Objects extends JPanel implements ActionListener {
        repaint();
        second();
         }
-    }
-    
-    public void Objects()                                                // this needs to be changed to startbutton was pressed
-    {
-        System.out.println("objects");
-        for( int q =0; q<10; q++)                                                 // this will send 10 things down
-        {
-            int RandSlot = rand.nextInt((3)) + 1;
-            if (RandSlot == 1) {
-                firstrow();
-                down();
-            }
-            if (RandSlot == 2) {
-                secondrow();
-                down();
-            }
-            if(RandSlot == 3)
-            {
-                thirdrow();
-                down();
-            }
-            else{
-                down();
-                y+= vely;
-            }
-        }    
     }
 }

@@ -93,7 +93,10 @@ public class Board extends JFrame implements ActionListener {
         if(obj == startButton){
            Objects falling = new Objects();
             background.add(falling);
-            System.out.println("here");
+            while(falling.t.isRunning()){
+                falling.repaint();
+                System.out.println("here");
+            }
         }
         else if(obj == quitButton){
             this.dispose();
