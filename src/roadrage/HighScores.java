@@ -24,7 +24,7 @@ public class HighScores
             BufferedReader br = new BufferedReader(fr);
             String line;
             
-            while( ( line = br.readLine()) != null)
+            while((line = br.readLine()) != null)
             {
                 System.out.println(line);
             } 

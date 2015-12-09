@@ -25,15 +25,18 @@ public class Objects extends JPanel implements ActionListener {
             if (RandSlot == 1) {
                 firstrow();
                 down();
+                System.out.println("Slot One");
             }
             if (RandSlot == 2) {
                 secondrow();
                 down();
+                System.out.println("Slot Two");
             }
             if(RandSlot == 3)
             {
                 thirdrow();
                 down();
+                System.out.println("Slot Three");
             }
             else{
                 down();

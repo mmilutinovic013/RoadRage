@@ -95,7 +95,7 @@ public class Board extends JFrame implements ActionListener {
             background.add(falling);
             while(falling.t.isRunning()){
                 falling.repaint();
-                System.out.println("here");
+                //System.out.println("here");
             }
         }
         else if(obj == quitButton){
